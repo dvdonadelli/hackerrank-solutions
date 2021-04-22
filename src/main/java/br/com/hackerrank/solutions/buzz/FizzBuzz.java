@@ -14,6 +14,5 @@ public class FizzBuzz {
             n = 15;
 
         Resultado.fizzBuzz(n);
-
     }
 }

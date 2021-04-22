@@ -26,34 +26,4 @@ class Result {
         return Math.abs(firstDiagonalSum - secondDiagonalSum);
     }
 
-    // Function to print the Principal Diagonal
-    static void printPrincipalDiagonal(List<List<Integer>> arr, int n) {
-        System.out.print("Principal Diagonal: ");
-
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                if (i == j) {
-                    System.out.print(arr.get(i).get(j) + ", ");
-                }
-            }
-        }
-        System.out.println("");
-    }
-
-    // Function to print the Secondary Diagonal
-    static void printSecondaryDiagonal(List<List<Integer>> arr, int n) {
-        System.out.print("Secondary Diagonal: ");
-
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-
-                // Condition for secondary diagonal
-                if ((i + j) == (n - 1)) {
-                    System.out.print(arr.get(i).get(j) + ", ");
-                }
-            }
-        }
-        System.out.println("");
-    }
-
 }

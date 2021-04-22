@@ -8,6 +8,7 @@ public class Solution {
 
     private static final Scanner s = new Scanner(System.in);
 
+    // TODO: Aprender e desenvolver testes unitários para testar as soluções com diversos cenários
     public static void main(String[] args) {
 
         // Recebe o tamanho do array
