@@ -4,25 +4,11 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
+import static br.com.hackerrank.solutions.trees.Node.insert;
+
 public class TreeHeightSolution {
 
-    public static Node insert(Node root, int value) {
-        if (root == null)
-            return new Node(value);
-        else {
-            Node currentNode;
-            if (value <= root.value) {
-                currentNode = insert(root.left, value);
-                root.left = currentNode;
-            } else {
-                currentNode = insert(root.right, value);
-                root.right = currentNode;
-            }
-            return root;
-        }
-    }
-
-    // Method to solve the problem using recursion
+    // Method to find the height of the tree using recursion
     private static int height(Node root) {
         if (root == null)
             return -1;
@@ -34,7 +20,7 @@ public class TreeHeightSolution {
         }
     }
 
-    // Method to solve the problem iteratively
+    // Method to find the height of the tree iteratively
     private static int heightIterative(Node root) {
         if (root == null)
             return 0;
@@ -62,6 +48,35 @@ public class TreeHeightSolution {
         }
     }
 
+    // Given a pointer to the root of a binary tree, you need to print the level order traversal of this tree.
+    // In level-order traversal, nodes are visited level by level from left to right
+    private static void levelOrder(Node root) {
+
+        if (root == null) return;
+
+        Queue<Node> q = new LinkedList<>();
+        q.add(root);
+
+        while (true) {
+            int nodeCount = q.size();
+
+            if (nodeCount == 0) return;
+
+            while (nodeCount > 0) {
+                Node curNode = q.peek();
+                q.remove();
+                if (curNode.left != null) {
+                    q.add(curNode.left);
+                }
+                if (curNode.right != null) {
+                    q.add(curNode.right);
+                }
+                System.out.print(curNode.value + " ");
+                nodeCount--;
+            }
+        }
+    }
+
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         System.out.println("Please enter how many values do you want to insert into a tree: ");
@@ -78,25 +93,17 @@ public class TreeHeightSolution {
         }
         s.close();
         System.out.println();
+        System.out.println("Here we have two solutions to find the height of this tree that you just have inserted");
+
         int h = height(root);
         System.out.println("The height of this binary tree is: " + h + " and it was found it with a simple recursive algorithm");
 
         int heightIterative = heightIterative(root);
         System.out.println("The height of this binary tree is: " + heightIterative + " And this time it was found with a iterative solution");
 
+        System.out.println("Here is the level order tree: ");
+        levelOrder(root);
     }
 
-}
-
-class Node {
-    Node left;
-    Node right;
-    int value;
-
-    Node(int value) {
-        this.value = value;
-        left = null;
-        right = null;
-    }
 }
 
