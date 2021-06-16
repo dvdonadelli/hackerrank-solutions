@@ -14,6 +14,7 @@ public class BinaryNumbers {
 
         // In this solution I'm printing the corresponding binary number
         // And finding and printing the number of consecutive 1's in the number binary representation
+        // Test comment
         System.out.println(bin);
         System.out.println(maxRepeat(bin));
     }
