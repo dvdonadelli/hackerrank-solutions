@@ -10,6 +10,7 @@ public class BinaryNumbers {
         s.close();
 
         // That is so convenient! lol
+	// I didn't have to do anything
         String bin = Integer.toBinaryString(n);
 
         // In this solution I'm printing the corresponding binary number
