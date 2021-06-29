@@ -4,18 +4,6 @@ import java.util.Scanner;
 
 public class SimpleRecursion {
 
-    public static void main(String[] args) {
-        Scanner s = new Scanner(System.in);
-
-        System.out.println("Hey, this is a class to test my simple recursion methods");
-        System.out.println("Let's see");
-        System.out.println();
-        System.out.println("Please enter a value and I'll tell you the Summation, Factorial of this value:");
-        int n = s.nextInt();
-
-        System.out.println("The summation of " + n + " is: " + Summation(n) + " and the Factorial is: " + Factorial(n));
-    }
-
     public static int Summation(int n) {
         // This is de BASE CASE: We're at the end of the recursion. The last number to sum is 0
         if (n <= 0) return 0;
