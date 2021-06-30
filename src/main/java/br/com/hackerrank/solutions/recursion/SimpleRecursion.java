@@ -21,6 +21,8 @@ public class SimpleRecursion {
     }
 
     public static int Exponentiation(int n, int p) {
+        if (p == 0) return 1;
+
         // The BASE CASE of Exponentiation: The last number to multiply is the n itself
         if (p <= 1) return n;
 
