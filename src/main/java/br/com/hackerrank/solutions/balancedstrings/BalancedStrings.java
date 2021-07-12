@@ -30,7 +30,7 @@ public class BalancedStrings {
             if (isOpenTerm(c)) {
                 stack.push(c);
             } else {
-                if (!matches(stack.pop(), c)) {
+                if (stack.isEmpty() || !matches(stack.pop(), c)) {
                     return false;
                 }
             }
