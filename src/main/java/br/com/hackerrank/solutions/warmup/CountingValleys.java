@@ -9,9 +9,9 @@ public class CountingValleys {
     // A number representing the number of valley's he's been through
     public static int countingValleys(int n, String path) {
         int altitude = 0, valleys = 0;
-        for (int i = 0; i < n; i++){
+        for (int i = 0; i < n; i++) {
             char step = path.charAt(i);
-            if (step == 'U'){
+            if (step == 'U') {
                 altitude++;
                 if (altitude == 0)
                     valleys++;
